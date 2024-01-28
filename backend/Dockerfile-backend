@@ -56,13 +56,14 @@ ARG DB_ROOT_PASSWORD
 ARG DB_DATABASE
 ARG DB_USERNAME
 ARG DB_PASSWORD
-
+ARG DB_HOST
 
 # Définir les variables d'environnement du mot de passe root pour MySQL
 ENV DB_ROOT_PASSWORD=$DB_ROOT_PASSWORD
 ENV DB_DATABASE=$DB_DATABASE
 ENV DB_USERNAME=$DB_USERNAME
 ENV DB_PASSWORD=$DB_PASSWORD
+ENV DB_HOST=$DB_HOST
 
 # Copier le script SQL d'initialisation dans le conteneur
 COPY init.sql /docker-entrypoint-initdb.d/
