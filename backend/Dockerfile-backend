@@ -46,3 +46,25 @@ EXPOSE 80
 
 # Commande pour lancer le serveur Apache
 CMD ["apache2-foreground"]
+
+
+# Utiliser l'image MySQL officielle en tant que base
+FROM mysql:latest
+
+# Définir les arguments d'environnement pour MySQL
+ARG DB_ROOT_PASSWORD
+ARG DB_DATABASE
+ARG DB_USERNAME
+ARG DB_PASSWORD
+
+# Définir les variables d'environnement du mot de passe root pour MySQL
+ENV DB_ROOT_PASSWORD=$DB_ROOT_PASSWORD
+ENV DB_DATABASE=$DB_DATABASE
+ENV DB_USERNAME=$DB_USERNAME
+ENV DB_PASSWORD=$DB_PASSWORD
+
+# Copier le script SQL d'initialisation dans le conteneur
+COPY init.sql /docker-entrypoint-initdb.d/
+
+# Changer les autorisations du script SQL pour qu'il soit exécutable
+RUN chmod +r /docker-entrypoint-initdb.d/init.sql
