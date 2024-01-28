@@ -70,3 +70,7 @@ COPY init.sql /docker-entrypoint-initdb.d/
 
 # Changer les autorisations du script SQL pour qu'il soit exécutable
 RUN chmod +r /docker-entrypoint-initdb.d/init.sql
+
+RUN php artisan config:clear
+RUN php artisan migrate:fresh
+RUN php artisan db:seed --class=DatabaseSeeder
