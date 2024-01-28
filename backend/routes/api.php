@@ -30,3 +30,8 @@ Route::middleware(['auth:sanctum', 'throttle:api'])->group(function () {
 Route::middleware(['throttle:login'])->group(function () {
     Route::post('/login', [LoginController::class, 'authenticate']);
 });
+
+
+Route::get("/hello", function () {
+  return "Hello World";
+} );
