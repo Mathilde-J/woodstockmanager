@@ -3,7 +3,7 @@ import axios from 'axios';
 
 axios.defaults.withCredentials = true;
 const Axios = axios.create({
-    baseURL: "http://localhost:8080",
+    baseURL: "https://woodstockmanager-production.up.railway.app",
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
