@@ -55,7 +55,6 @@ export default {
 }
 
 .application__login {
-  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
