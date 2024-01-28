@@ -17,7 +17,7 @@ return [
 
     'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', sprintf(
         '%s%s',
-        'woodstockmanager,woodstockmanager.up.railway.app,localhost,localhost:8081,127.0.0.1,127.0.0.1:8082,localhost,localhost:8081,::1,',
+        'woodstockmanager,localhost,localhost:8081,127.0.0.1,127.0.0.1:8082,localhost,localhost:8081,::1,',
         Sanctum::currentApplicationUrlWithPort()
     ))),
 
