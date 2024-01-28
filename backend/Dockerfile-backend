@@ -49,7 +49,7 @@ CMD ["apache2-foreground"]
 
 
 # Utiliser l'image MySQL officielle en tant que base
-FROM mysql:latest
+FROM mysql:8.0
 
 # Définir les arguments d'environnement pour MySQL
 ARG DB_ROOT_PASSWORD
