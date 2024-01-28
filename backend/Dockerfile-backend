@@ -74,3 +74,7 @@ RUN chmod +r /docker-entrypoint-initdb.d/init.sql
 RUN php artisan config:clear
 RUN php artisan migrate:fresh
 RUN php artisan db:seed --class=DatabaseSeeder
+
+FROM adminer:4.8.1
+
+EXPOSE 9080
