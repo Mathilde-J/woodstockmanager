@@ -75,6 +75,9 @@ RUN php artisan config:clear
 RUN php artisan migrate:fresh
 RUN php artisan db:seed --class=DatabaseSeeder
 
+EXPOSE 3306
+
 FROM adminer:4.8.1
 
 EXPOSE 9080
+
